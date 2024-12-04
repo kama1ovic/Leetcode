@@ -25,36 +25,36 @@
 # 0 <= Node.val <= 9
 # It is guaranteed that the list represents a number that does not have leading zeros.
 
-# class Solution(object):
-#     def addTwoNumbers(self, l1, l2):
-#         """
-#         :type l1: Optional[ListNode]
-#         :type l2: Optional[ListNode]
-#         :rtype: Optional[ListNode]
-#         """
-#         # Initialize dummy node for result linked list
-#         dummy = ListNode(0)
-#         current = dummy
-#         carry = 0
+class Solution(object):
+    def addTwoNumbers(self, l1, l2):
+        """
+        :type l1: Optional[ListNode]
+        :type l2: Optional[ListNode]
+        :rtype: Optional[ListNode]
+        """
+        # Initialize dummy node for result linked list
+        dummy = ListNode(0)
+        current = dummy
+        carry = 0
 
-#         # Iterate through linked lists
-#         while l1 or l2:
-#             # Calculate sum of current nodes and carry-over value
-#             sum_val = carry
-#             if l1:
-#                 sum_val += l1.val
-#                 l1 = l1.next
-#             if l2:
-#                 sum_val += l2.val
-#                 l2 = l2.next
+        # Iterate through linked lists
+        while l1 or l2:
+            # Calculate sum of current nodes and carry-over value
+            sum_val = carry
+            if l1:
+                sum_val += l1.val
+                l1 = l1.next
+            if l2:
+                sum_val += l2.val
+                l2 = l2.next
 
-#             # Update carry-over value and create new node
-#             carry = sum_val // 10
-#             current.next = ListNode(sum_val % 10)
-#             current = current.next
+            # Update carry-over value and create new node
+            carry = sum_val // 10
+            current.next = ListNode(sum_val % 10)
+            current = current.next
 
-#         # Handle remaining carry-over value
-#         if carry > 0:
-#             current.next = ListNode(carry)
+        # Handle remaining carry-over value
+        if carry > 0:
+            current.next = ListNode(carry)
 
-#         return dummy.next
+        return dummy.next
